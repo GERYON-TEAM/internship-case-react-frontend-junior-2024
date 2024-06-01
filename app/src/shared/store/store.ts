@@ -1,11 +1,14 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { rootApi } from '../api/root/api';
 
-const rootReducer = combineReducers({});
+const rootReducer = combineReducers({
+  [rootApi.reducerPath]: rootApi.reducer,
+});
 
 export const setupStore = () => {
   return configureStore({
     reducer: rootReducer,
-    middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }).concat(),
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false }).concat(rootApi.middleware),
   });
 };
 

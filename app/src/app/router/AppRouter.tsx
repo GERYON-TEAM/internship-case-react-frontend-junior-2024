@@ -13,7 +13,9 @@ const AppRoter: React.FC = () => {
         <Suspense fallback="loading...">
           <Routes>
             <Route path={config.employees} element={<EmployeesPageLazy />} />
-            <Route path={config.employee} element={<EmployeePageLazy />} />
+            <Route path={config.employee} element={<EmployeePageLazy />}>
+              <Route path={':id'} element={<EmployeePageLazy />} />
+            </Route>
 
             <Route path="*" element={<Navigate to={config.employees} />} />
           </Routes>

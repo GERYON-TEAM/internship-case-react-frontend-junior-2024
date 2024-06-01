@@ -4,10 +4,10 @@ import { IEmployee } from '@/shared/types/employee.type';
 
 export const employeeApi = rootApi.injectEndpoints({
   endpoints: (build) => ({
-    employees: build.query<IEmployee[], { id: number }>({
-      query: (params: { id: number }) => {
+    employees: build.query<IEmployee[], { id?: number }>({
+      query: (params?: { id?: number }) => {
         return {
-          url: `${apiConfig.employees.url}/${params.id || ''}`,
+          url: `${apiConfig.employees.url}/${params?.id || ''}`,
           method: apiConfig.employees.method,
         };
       },

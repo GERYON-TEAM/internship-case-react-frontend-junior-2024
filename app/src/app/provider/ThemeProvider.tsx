@@ -9,19 +9,19 @@ export function ThemeProvider({ children }: ThemeProviderProsp) {
       JoyIconButton: {
         defaultProps: {
           style: {
-            borderRadius: 12,
+            borderRadius: 10,
           },
         },
       },
       JoyButton: {
         styleOverrides: {
           root: {
-            borderRadius: 12,
+            borderRadius: 10,
           },
         },
         defaultProps: {
           style: {
-            borderRadius: 12,
+            borderRadius: 10,
           },
         },
       },
@@ -32,9 +32,7 @@ export function ThemeProvider({ children }: ThemeProviderProsp) {
       },
       dark: {
         palette: {
-          primary: {
-            100: 'red',
-          },
+          primary: {},
         },
       },
     },

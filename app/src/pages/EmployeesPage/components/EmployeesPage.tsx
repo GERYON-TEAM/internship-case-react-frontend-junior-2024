@@ -1,5 +1,7 @@
+import EmployeesList from '@/modules/EmployeesList';
+
 const EmployeesPage = () => {
-  return <div>EmployeesPsage</div>;
+  return <EmployeesList />;
 };
 
 export default EmployeesPage;
