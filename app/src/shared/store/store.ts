@@ -1,17 +1,6 @@
-import { snackBarReducer } from './snackbar/snackBarSlice';
-import { meReducer } from './me/meSlice';
-import { signInReducer } from '../../modules/Login/store/signInForm';
-import { signUpReducer } from '../../modules/SignUpForms/store/signUpSlice';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { addPostReducer } from '../../modules/AddPostForm/store/addPostSlice';
 
-const rootReducer = combineReducers({
-  signUpReducer,
-  signInReducer,
-  meReducer,
-  snackBarReducer,
-  addPostReducer,
-});
+const rootReducer = combineReducers({});
 
 export const setupStore = () => {
   return configureStore({
