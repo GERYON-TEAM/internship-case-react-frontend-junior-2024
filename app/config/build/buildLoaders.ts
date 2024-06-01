@@ -45,14 +45,14 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
     },
   };
 
+  // const scssLoader = {
+  //   test: /\.s[ac]ss$/i,
+  //   use: [MiniCssExtractPlugin.loader, cssLoaderWithModules, 'sass-loader'],
+  // };
+
   const cssLoader = {
     test: /\.css$/i,
     use: ['style-loader', 'css-loader'],
-  };
-
-  const scssLoader = {
-    test: /\.s[ac]ss$/i,
-    use: [MiniCssExtractPlugin.loader, cssLoaderWithModules, 'sass-loader'],
   };
 
   // const tsLoader = {
@@ -62,7 +62,7 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
   // };
 
   const tsLoader = {
-    test: /\.tsx?$/,
+    test: /\.ts$|tsx?$/,
     exclude: /node_modules/,
     use: [
       {
@@ -84,6 +84,6 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
     svgrLoader,
     cssLoader,
     // tsLoader,
-    babelLoader,
+    tsLoader,
   ];
 }

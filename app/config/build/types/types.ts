@@ -4,6 +4,7 @@ export interface BuildPaths {
   output: string;
   src: string;
   public: string;
+  eslintPath: string | undefined;
 }
 
 export type BuildMode = 'production' | 'development';

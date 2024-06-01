@@ -1,79 +1,93 @@
-@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&family=Montserrat:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&family=Montserrat:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Vast+Shadow&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 :root {
-  --max-width: 1200px;
-  --border-radius: 10px;
-  --font-londriana: 'Londrina Solid', sans-serif;
-  --font-vast: 'Vast Shadow', serif;
-  --font-fira: 'Fira Sans', sans-serif;
+  --max-width: 1100px;
+  --border-radius: 15px;
+  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono',
+    'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
-  --font-color: #001b2e;
-  --background-color: #ffefd3;
-  --primary-color: #001b2e;
-  --secondary-color: #294c60;
-  --tertiary-color: #ffc49b;
+  --font-montserrat: 'Montserrat', sans-serif;
 
-  --darker-bg: #e1d4bc;
+  --gradient-wrapper: linear-gradient(140deg, #6734c3 0%, #d355de 100%);
+
+  /* primary, background, secondary */
+
+  --primary-rgb: 235, 0, 255;
+  --background-rgb: 240, 240, 240;
+  --card-rgb: #fafafa;
+
+  --error-color: rgb(190, 33, 33);
+
+  /* button check color */
+  --foreground-rgb: 167, 122, 223;
+
+  /* main color for text */
+  --title-start-rgb: 40, 40, 40;
+
+  /* tertiary */
+  --callout-rgb: 215, 215, 215;
+
+  /* check color quaternary */
+  --check-rgb: 233, 64, 87;
+
+  /* link color */
+  --link-color: #0080ff;
+
+  /* text color */
+  --text-color: #000000;
+
+  /* border-for-card-color */
+  --border-color: #d7d7d7;
+  --border-color-high: #d7d7d7;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --font-color: #ffffff;
-    --background-color: #161616;
-    --primary-color: #dfdfdf;
-    --secondary-color: #f6fcff;
-    --tertiary-color: #335e3c;
-    --darker-bg: #0a0a0a;
+    --gradient-wrapper: linear-gradient(140deg, #6734c3 0%, #d355de 100%);
+
+    --primary-rgb: 235, 0, 255;
+    --background-rgb: 10, 10, 10;
+    --card-rgb: #191618;
+
+    --error-color: rgb(223, 0, 11);
+
+    /* button check color */
+    --foreground-rgb: 167, 122, 223;
+
+    /* main color for text */
+    --title-start-rgb: 255, 255, 255;
+
+    /* tertiary */
+    --callout-rgb: 215, 215, 215;
+
+    /* check color quaternary */
+    --check-rgb: 233, 64, 87;
+
+    /* text color */
+    --text-color: #ffffff;
+
+    /* link color */
+    --link-color: #0080ff;
+
+    /* border-for-card-color */
+    --border-color: rgba(61, 61, 61, 0.34);
+    --border-color-high: rgba(61, 61, 61, 1);
   }
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
+body {
   margin: 0;
+  padding: 0;
+  background-color: rgb(var(--background-rgb));
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-html {
-  color: var(--font-color);
-  font-family: var(--font-fira);
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-html,
-body {
-  max-width: 100vw;
-}
-
-body {
-  background-color: var(--darker-bg);
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
-
-button {
-  outline: none;
-  border: none;
-  cursor: pointer;
-  border-radius: var(--border-radius);
-}
-
-.darker-bg {
-  background-color: var(--darker-bg);
-  min-height: 100vh;
-}
-
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
-
-.card {
-  background-color: var(--background-color);
-  border-radius: var(--border-radius);
-  padding: 10px 20px;
+a {
+  color: var(--link-color);
+  text-decoration: none;
 }

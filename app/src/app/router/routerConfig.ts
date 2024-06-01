@@ -1,3 +1,9 @@
 export const config = {
-  employees: '/employees',
+  feed: '/feed',
+  about: '/about',
+  admin: '/admin',
+  signup: '/signup',
+  post: '/post',
+  user: '/user',
+  edit: 'edit',
 };

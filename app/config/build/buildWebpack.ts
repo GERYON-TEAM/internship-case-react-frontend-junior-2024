@@ -8,7 +8,6 @@ import { BuildOptions } from './types/types';
 export function buildWebpack(options: BuildOptions): webpack.Configuration {
   const { mode, port, paths } = options;
   const isDev = options.mode === 'development';
-
   return {
     mode: mode ?? 'development',
     entry: paths.entry,
@@ -16,6 +15,7 @@ export function buildWebpack(options: BuildOptions): webpack.Configuration {
       path: paths.output,
       filename: '[name].[contenthash].js',
       clean: true,
+      publicPath: '/',
     },
     plugins: buildPlugins(options),
     module: {
