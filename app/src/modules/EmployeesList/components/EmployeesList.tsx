@@ -6,7 +6,7 @@ import { Title } from '@/shared/ui/typography/Title';
 import { CircularProgress } from '@mui/joy';
 
 const EmployeesList = () => {
-  const { data: employees, isLoading } = useEmployeesQuery({});
+  const { data: employees, isLoading } = useEmployeesQuery();
 
   const renderItem = (employee: IEmployee) => {
     return <EmployeeItem key={employee.id} employee={employee} />;
